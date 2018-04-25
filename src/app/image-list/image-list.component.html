@@ -1,3 +1,14 @@
-<p>
-  image-list works!
-</p>
+<!-- HTML file to test output of API -->
+
+<input class="search" [(ngModel)]="searchQuery" placeholder="Enter image search query" />
+<button (click)="searchImages(searchQuery)">Find Image</button>
+
+<p *ngIf="queryingAPI">Fetching data...</p>
+
+<div id="imageContainer" class="image-container" *ngFor="let image of images">
+  <img src="{{ image.webformatURL }}" />
+  <p>Tags : {{ image.tags }}</p>
+  <p>User : {{ image.user }}</p>
+  <p>Comments : {{ image.comments }}</p>
+  <p>Likes : {{ image.likes }}</p>
+</div>

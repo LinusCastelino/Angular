@@ -1,3 +1,14 @@
+This project was developed by following the tutorial 'Angular 4 Tutorial - Image Search App with Http' by Wes Doyle.
+
+Link to the tutorial video : https://www.youtube.com/watch?v=umiW-pfbB5c
+
+
+Note - The tutorial uses material design which is now obsolete. This project implements the use of new Material design.
+
+
+
+__________________________________________________________________________________________________________________________________
+
 # ImageSearch
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.

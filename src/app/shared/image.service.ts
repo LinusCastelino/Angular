@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';    //all the application constants stored here as an exported object
-import { Http, Headers } from '@angular/http';    //for standard http communication. provides methods like get, post, prut, delete, patch etc.
+import { Http, Headers } from '@angular/http';    //for standard http communication. provides methods like get, post, put, delete, patch etc.
 import 'rxjs/add/operator/map';    //to map the Observable into another form
 import { Observable } from 'rxjs/Observable';
 

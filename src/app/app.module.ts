@@ -8,7 +8,12 @@ import { ImageListComponent } from './image-list/image-list.component';
 import { ImageService } from './shared/image.service'
 
 //Modules installed for UI
-import {  } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 import {MasonryModule} from 'angular2-masonry';    //for responsive behaviour of image cards
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -22,7 +27,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     HttpModule,
     MasonryModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatProgressBarModule
   ],
   providers: [ ImageService ],
   bootstrap: [AppComponent]

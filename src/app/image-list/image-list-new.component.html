@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-input-container>
+        <input class="search" [(ngModel)]="searchQuery" placeholder="Enter image search query" matInput />
+    </mat-input-container>
+
+    <br />
+
+    <button (click)="searchImages(searchQuery)" class="searchButton" mat-raised-button >Find Image</button>
+</mat-card>
+
+<div *ngIf="queryingAPI">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<mat-card>
+    <h4 *ngIf="imagesFound">Search Results :</h4>
+    <masonry [useImagesLoaded]="true">     <!-- -->
+    </masonry>
+</mat-card>

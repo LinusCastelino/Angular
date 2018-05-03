@@ -11,6 +11,7 @@ export class ImageListComponent implements OnInit {
 
   images : any = [];    //holds results returned by Pixabay API
   queryingAPI: boolean = false;    //to show progress bar
+  imagesFound : boolean = false;    //flag to indicate images found
 
   constructor(private _imageService : ImageService) { }
 
@@ -23,8 +24,12 @@ export class ImageListComponent implements OnInit {
       value => {
         console.log(value);
         this.images=value.hits;
+        this.imagesFound = true;
       },
-      error => console.error('Error : ' + error),
+      error => {
+        console.error('Error : ' + error);
+        this.imagesFound = false;
+      },
       () => {
         this.queryingAPI= false;
         console.log('Request for ' + inputQuery + ' completed!')

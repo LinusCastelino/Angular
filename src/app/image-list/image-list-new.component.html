@@ -1,19 +1,37 @@
 <mat-card>
-    <mat-input-container>
-        <input class="search" [(ngModel)]="searchQuery" placeholder="Enter image search query" matInput />
-    </mat-input-container>
-
-    <br />
-
-    <button (click)="searchImages(searchQuery)" class="searchButton" mat-raised-button >Find Image</button>
-</mat-card>
-
-<div *ngIf="queryingAPI">
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</div>
-
-<mat-card>
-    <h4 *ngIf="imagesFound">Search Results :</h4>
-    <masonry [useImagesLoaded]="true">     <!-- -->
-    </masonry>
-</mat-card>
+        <mat-input-container>
+            <input class="search" [(ngModel)]="searchQuery" placeholder="Enter image search query" matInput />
+        </mat-input-container>
+    
+        <br />
+    
+        <button (click)="searchImages(searchQuery)" class="searchButton" mat-raised-button >Find Image</button>
+    </mat-card>
+    
+    <div *ngIf="queryingAPI">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    
+    <mat-card>
+        <h4 *ngIf="imagesFound">Search Results :</h4>
+        <masonry [useImagesLoaded]="true">     <!-- -->
+            <masonry-brick *ngFor="let image of images" class="image-container">
+                <mat-card>
+                    <a href="{{ image.pageURL }}" target="_blank">
+                        <mat-card-header>
+                            <div class="avatar" [ngStyle]="{background-image:'url('+ image.userImageURL +')',background-size:'40px 40px'}"></div>
+                            <mat-card-title>User : {{ image.user }}</mat-card-title>
+                        </mat-card-header>
+    
+                        <img mat-card-image src="{{ image.webformatURL }}" />
+    
+                        <mat-card-content>
+                            <p>Tags : {{ image.tags }}</p>
+                            <p>Comments : {{ image.comments }}</p>
+                            <p>Likes : {{ image.likes }}</p>
+                        </mat-card-content>
+                    </a>
+                </mat-card>
+            </masonry-brick>
+        </masonry>
+    </mat-card>

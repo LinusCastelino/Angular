@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';    //all the application constants stored here as an exported object
-import { HttpClient, Headers } from '@angular/common/http';    //for standard http communication. provides methods like get, post, put, delete, patch etc.
+import { HttpClient } from '@angular/common/http';    //for standard http communication. provides methods like get, post, put, delete, patch etc.
 import 'rxjs/add/operator/map';    //to map the Observable into another form
 import { Observable } from 'rxjs/Observable';
 
@@ -15,9 +15,8 @@ export class ImageService {
 
   constructor(private _http: HttpClient) { }
 
-  public getImage(query: string) : Observable<any>{
-    return this._http.get(this.URL + query + this.resultsPerPage)
-          .map(res => res.json());
+  public getImage(query: string) {
+    return this._http.get(this.URL + query + this.resultsPerPage);//.map(res => res.json());
   }
 }
 

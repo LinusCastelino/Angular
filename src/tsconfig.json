@@ -14,5 +14,12 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
-  }
+  },
+  "include": [
+    "**/*",
+    "../node_modules/angular2-masonry/index.ts",
+    "../node_modules/angular2-masonry/src/masonry.ts",
+    "../node_modules/angular2-masonry/src/brick.ts",
+    "../node_modules/angular2-masonry/src/module.ts"
+  ]
 }

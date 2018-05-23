@@ -20,22 +20,12 @@ export class ImageListComponent implements OnInit {
 
   public searchImages(inputQuery : string){
     this.queryingAPI = true;
-    this._imageService.getImage(inputQuery).subscribe(
-      value => {
-        console.log(value);
-        this.images=value.hits;
-        this.imagesFound = true;
-      },
-      error => {
-        console.error('Error : ' + error);
-        this.imagesFound = false;
-      },
-      () => {
-        this.queryingAPI= false;
-        console.log('Request for ' + inputQuery + ' completed!')
-      }
-    );
-
+    this._imageService.getImage(inputQuery).subscribe(data => { 
+      console.log(data);
+      this.images=data["hits"];
+      this.imagesFound = true;
+      this.queryingAPI = false;
+    });
   }
 
 }

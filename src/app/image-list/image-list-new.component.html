@@ -14,7 +14,7 @@
     
     <mat-card>
         <h4 *ngIf="imagesFound">Search Results :</h4>
-        <masonry >     <!-- [useImagesLoaded]="true" -->
+        <masonry [useImagesLoaded]="true">     <!-- To overcome issues with masonry on page refresh -->
             <masonry-brick *ngFor="let image of images" class="image-container">
                 <mat-card>
                     <a href="{{ image.pageURL }}" target="_blank">
